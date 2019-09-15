@@ -6,7 +6,9 @@ public class DragAndDrop : MonoBehaviour
 {
     bool moveAllowed;
     Collider2D col;
-    // Start is called before the first frame update
+
+    public GameObject selectionEffect;
+
     void Start()
     {
         col = GetComponent<Collider2D>();
@@ -51,6 +53,7 @@ public class DragAndDrop : MonoBehaviour
             Collider2D touchedCollider = Physics2D.OverlapPoint(mousePos);
             if (col == touchedCollider)
             {
+                Instantiate(selectionEffect, transform.position, Quaternion.identity);
                 moveAllowed = true;
             }
         }

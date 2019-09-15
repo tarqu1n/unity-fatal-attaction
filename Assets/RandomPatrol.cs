@@ -17,6 +17,8 @@ public class RandomPatrol : MonoBehaviour
 
     public float secondsToMaxDifficulty;
 
+    public GameObject restartPanel;
+
     Vector2 targetPosition;
     // Start is called before the first frame update
     void Start()
@@ -51,7 +53,7 @@ public class RandomPatrol : MonoBehaviour
     {
         if (collision.tag == "Monster")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            restartPanel.SetActive(true);
         }
     }
 
