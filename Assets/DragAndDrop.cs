@@ -8,9 +8,15 @@ public class DragAndDrop : MonoBehaviour
     Collider2D col;
 
     public GameObject selectionEffect;
+    public GameObject deathEffect;
+
+    private GameMaster gm;
+    private AudioSource source;
 
     void Start()
     {
+        source = GetComponent<AudioSource>();
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         col = GetComponent<Collider2D>();
     }
 
@@ -27,6 +33,11 @@ public class DragAndDrop : MonoBehaviour
                 Collider2D touchedCollider = Physics2D.OverlapPoint(touchPosition);
                 if (col == touchedCollider)
                 {
+                    if (selectionEffect)
+                    {
+                        Instantiate(selectionEffect, transform.position, Quaternion.identity);
+                    }
+                    source.Play();
                     moveAllowed = true;
                 }
             }
@@ -44,6 +55,18 @@ public class DragAndDrop : MonoBehaviour
         HandleMouse();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Monster")
+        {
+            if (deathEffect)
+            {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            }
+            gm.GameOver();
+        }
+    }
+
     void HandleMouse ()
     {
         bool isBtnDown = Input.GetMouseButton(0);
@@ -53,7 +76,11 @@ public class DragAndDrop : MonoBehaviour
             Collider2D touchedCollider = Physics2D.OverlapPoint(mousePos);
             if (col == touchedCollider)
             {
-                Instantiate(selectionEffect, transform.position, Quaternion.identity);
+                if (selectionEffect)
+                {
+                    Instantiate(selectionEffect, transform.position, Quaternion.identity);
+                }
+                source.Play();
                 moveAllowed = true;
             }
         }

@@ -17,7 +17,7 @@ public class RandomPatrol : MonoBehaviour
 
     public float secondsToMaxDifficulty;
 
-    public GameObject restartPanel;
+    
 
     Vector2 targetPosition;
     // Start is called before the first frame update
@@ -47,14 +47,6 @@ public class RandomPatrol : MonoBehaviour
         float randomY = Random.Range(minY, maxY);
 
         return new Vector2(randomX, randomY);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Monster")
-        {
-            restartPanel.SetActive(true);
-        }
     }
 
     float GetDifficultyPercent()

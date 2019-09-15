@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Monster
+  - GM
   layers:
   - Default
   - TransparentFX
@@ -41,4 +42,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1980091757
+    locked: 0
+  - name: Sprites
+    uniqueID: 2430508465
+    locked: 0
+  - name: Overlay
+    uniqueID: 1185506493
     locked: 0

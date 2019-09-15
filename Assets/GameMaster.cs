@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour
 {
+
+    public GameObject restartPanel; 
     public void GoToGameScene()
     {
         SceneManager.LoadScene("Game");
@@ -17,6 +19,16 @@ public class GameMaster : MonoBehaviour
 
     public void GoToMainMenu ()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void GameOver()
+    {
+        Invoke("ShowRestartPanel", 1.5f);
+    }
+
+    public void ShowRestartPanel()
+    {
+        restartPanel.SetActive(true);
     }
 }
