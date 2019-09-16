@@ -23,6 +23,25 @@ public class DragAndDrop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        HandleMouse();
+        HandleTouch();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Monster")
+        {
+            if (deathEffect)
+            {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            }
+            gm.GameOver();
+        }
+    }
+
+    void HandleTouch ()
+    {
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -51,19 +70,6 @@ public class DragAndDrop : MonoBehaviour
             {
                 moveAllowed = false;
             }
-        }
-        HandleMouse();
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Monster")
-        {
-            if (deathEffect)
-            {
-            Instantiate(deathEffect, transform.position, Quaternion.identity);
-            }
-            gm.GameOver();
         }
     }
 

@@ -17,7 +17,8 @@ public class RandomPatrol : MonoBehaviour
 
     public float secondsToMaxDifficulty;
 
-    
+    private SpriteManager spriteManager;
+    private Sprite sprite;
 
     Vector2 targetPosition;
     // Start is called before the first frame update
@@ -25,6 +26,11 @@ public class RandomPatrol : MonoBehaviour
     {
         targetPosition = GetRndPosWithinBounds();
         speed = minSpeed;
+
+        spriteManager = transform.parent.gameObject.GetComponent<SpriteManager>();
+        sprite = spriteManager.GetRandom();
+        GetComponent<SpriteRenderer>().sprite = sprite;
+
     }
 
     // Update is called once per frame

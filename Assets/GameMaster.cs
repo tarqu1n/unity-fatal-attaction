@@ -6,7 +6,12 @@ using UnityEngine.SceneManagement;
 public class GameMaster : MonoBehaviour
 {
 
-    public GameObject restartPanel; 
+    [Header("Global Game Setup")]
+    [Space]
+    public GameObject RestartPanel;
+
+    [HideInInspector]
+    public bool Alive;
     public void GoToGameScene()
     {
         SceneManager.LoadScene("Game");
@@ -29,6 +34,6 @@ public class GameMaster : MonoBehaviour
 
     public void ShowRestartPanel()
     {
-        restartPanel.SetActive(true);
+        RestartPanel.SetActive(true);
     }
 }
