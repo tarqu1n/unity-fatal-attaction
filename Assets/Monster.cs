@@ -11,7 +11,7 @@ public class Monster : MonoBehaviour
     public GameObject deathEffect;
 
     private GameMaster gm;
-
+    private Animator animator;
 
     Vector2 targetPosition;
     void Start()
@@ -25,12 +25,17 @@ public class Monster : MonoBehaviour
 
         GetComponent<SpriteRenderer>().sprite = monsterInfo.sprite;
         GetComponent<DragAndDrop>().selectionEffect = monsterInfo.selectionEffect;
+        animator = GetComponent<Animator>();
 
     }
 
     void Update()
     {
-
+        if (!gm.alive)
+        {
+            animator.enabled = false;
+            animator.StopPlayback();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

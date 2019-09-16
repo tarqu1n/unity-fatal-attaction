@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &705544762268837764
+--- !u!1001 &4508696655837198389
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -15,12 +15,12 @@ PrefabInstance:
     - target: {fileID: 357567593765521624, guid: 3b8a1ad35d335004aacb9e883ad0a6a2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.100581
+      value: -0.020788562
       objectReference: {fileID: 0}
     - target: {fileID: 357567593765521624, guid: 3b8a1ad35d335004aacb9e883ad0a6a2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1202061
+      value: -1.1213301
       objectReference: {fileID: 0}
     - target: {fileID: 357567593765521624, guid: 3b8a1ad35d335004aacb9e883ad0a6a2,
         type: 3}
@@ -71,37 +71,37 @@ PrefabInstance:
         type: 3}
       propertyPath: UVModule.sprites.Array.data[0].sprite
       value: 
-      objectReference: {fileID: 21300002, guid: 3fb60b436ceb36f42bdf558f0005d19d,
+      objectReference: {fileID: 21300000, guid: 3fb60b436ceb36f42bdf558f0005d19d,
         type: 3}
     - target: {fileID: 357567593765521575, guid: 3b8a1ad35d335004aacb9e883ad0a6a2,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.5225661
+      value: 0.87843144
       objectReference: {fileID: 0}
     - target: {fileID: 357567593765521575, guid: 3b8a1ad35d335004aacb9e883ad0a6a2,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.9150943
+      value: 0.34509805
       objectReference: {fileID: 0}
     - target: {fileID: 357567593765521575, guid: 3b8a1ad35d335004aacb9e883ad0a6a2,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.31510323
+      value: 0.58431375
       objectReference: {fileID: 0}
     - target: {fileID: 357567593765521575, guid: 3b8a1ad35d335004aacb9e883ad0a6a2,
         type: 3}
       propertyPath: InitialModule.startColor.minColor.r
-      value: 0.3733099
+      value: 0.9056604
       objectReference: {fileID: 0}
     - target: {fileID: 357567593765521575, guid: 3b8a1ad35d335004aacb9e883ad0a6a2,
         type: 3}
       propertyPath: InitialModule.startColor.minColor.g
-      value: 0.6603774
+      value: 0.5938057
       objectReference: {fileID: 0}
     - target: {fileID: 357567593765521575, guid: 3b8a1ad35d335004aacb9e883ad0a6a2,
         type: 3}
       propertyPath: InitialModule.startColor.minColor.b
-      value: 0.22116414
+      value: 0.7336816
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b8a1ad35d335004aacb9e883ad0a6a2, type: 3}

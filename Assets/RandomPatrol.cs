@@ -14,16 +14,27 @@ public class RandomPatrol : MonoBehaviour
 
     public float secondsToMaxDifficulty;
 
+    private GameMaster gm;
+
     Vector2 targetPosition;
     // Start is called before the first frame update
     void Start()
     {
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         targetPosition = GetRndPosWithinBounds();
         speed = minSpeed;
     }
 
     // Update is called once per frame
     void Update()
+    {
+        if (gm.alive)
+        {
+            Move();
+        }
+    }
+
+    void Move()
     {
         if ((Vector2)transform.position != targetPosition)
         {
@@ -35,7 +46,6 @@ public class RandomPatrol : MonoBehaviour
             targetPosition = GetRndPosWithinBounds();
         }
     }
-
     Vector2 GetRndPosWithinBounds()
     {
         float randomX = Random.Range(minX, maxX);
