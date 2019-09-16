@@ -11,7 +11,8 @@ public class GameMaster : MonoBehaviour
     [Space]
     public GameObject RestartPanel;
     public GameObject scoreTextObj;
-    
+    public AudioSource deathSound;
+
     [HideInInspector]
     public bool alive;
 
@@ -60,6 +61,7 @@ public class GameMaster : MonoBehaviour
     public void GameOver()
     {
         Invoke("ShowRestartPanel", 1.5f);
+        deathSound.Play();
         alive = false;
     }
 
