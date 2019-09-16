@@ -11,15 +11,23 @@ public class GameMaster : MonoBehaviour
     public GameObject RestartPanel;
 
     [HideInInspector]
-    public bool Alive;
+    public bool alive;
+    public void Start()
+    {
+        alive = true;
+    }
+
     public void GoToGameScene()
     {
+        alive = true;
         SceneManager.LoadScene("Game");
     }
 
     public void Restart ()
     {
+        alive = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
     }
 
     public void GoToMainMenu ()
@@ -30,6 +38,7 @@ public class GameMaster : MonoBehaviour
     public void GameOver()
     {
         Invoke("ShowRestartPanel", 1.5f);
+        alive = false;
     }
 
     public void ShowRestartPanel()

@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class RandomPatrol : MonoBehaviour
 {
@@ -17,20 +14,12 @@ public class RandomPatrol : MonoBehaviour
 
     public float secondsToMaxDifficulty;
 
-    private SpriteManager spriteManager;
-    private Sprite sprite;
-
     Vector2 targetPosition;
     // Start is called before the first frame update
     void Start()
     {
         targetPosition = GetRndPosWithinBounds();
         speed = minSpeed;
-
-        spriteManager = transform.parent.gameObject.GetComponent<SpriteManager>();
-        sprite = spriteManager.GetRandom();
-        GetComponent<SpriteRenderer>().sprite = sprite;
-
     }
 
     // Update is called once per frame

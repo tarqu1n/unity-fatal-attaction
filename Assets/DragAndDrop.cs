@@ -23,9 +23,16 @@ public class DragAndDrop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        HandleMouse();
-        HandleTouch();
+
+        if (gm.alive)
+        {
+            HandleMouse();
+            HandleTouch();
+        }
+        else if (moveAllowed)
+        {
+            moveAllowed = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -99,8 +106,6 @@ public class DragAndDrop : MonoBehaviour
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = mousePos;
-        }
-        
-        
+        }        
     }
 }
